@@ -31,8 +31,8 @@ Deep Learning A-Z: Hands-On AI
 ** Section 2: Artificial Neural Networks
 
 * Part 1
-
-** Section 3: ANN Intuition
+  
+** Section 3: ANN Intuition 
 
 *** Plan of Attack
 + What we will learn in this section:
@@ -95,16 +95,15 @@ Deep Learning A-Z: Hands-On AI
 
 *** How do Neural Networks work?
 
-
-
-
 *** How do Neural Networks learn?
 
 *** Gradient Descent
 
 *** Stochastic Gradient Descent
 
-*** Backpropagation
+
+*** Backpropagatio
+
 
 ** Section 4: Building an ANN
 
