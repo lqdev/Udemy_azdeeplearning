@@ -75,14 +75,14 @@ Deep Learning A-Z: Hands-On AI
 + Threshold Function
   + 1 if x >= 0 | 0 if x < 0 (yes or no)
 + Sigmoid Function
-  + 1 / 1 + e ^ -x (used in logistic regression)
+  + \(\frac{1}{1 + e^{-x}}\) (used in logistic regression)
   + Smooth gradual progression
   + Very useful in output layer
 + Rectifier Function
-  + max(x,0)
+  + \(max(x,0)\)
   + One of most used
 + Hyperbolic Tangent (tahn)
-  + 1 - e ^ -2x / 1 + e ^ -2x
+  + \(\frac{1 - e^{-2x}}{ 1 + e^{-2x}}\)
   + Can go below 0
 
 + Exercise 1
