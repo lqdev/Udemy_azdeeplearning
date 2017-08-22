@@ -93,6 +93,9 @@
   + In hidden layer apply rectifier
   + Output layer applies sigmoid function
 
+
+8/22/2017
+
 *** How do Neural Networks work?
 
 Example: Property Valuations
