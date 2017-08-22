@@ -95,12 +95,55 @@
 
 *** How do Neural Networks work?
 
+Example: Property Valuations
+
++ Input Layer
+  + Area
+  + Bedrooms
+  + Distance to city
+  + Age
++ Output Layer
+  + Price
++ Hidden Layer
+  + Connected with input layer
+  + Some weights will have 0 value and others will not
+  + Allows you to increase the flexibility or your neural network and look for specific things
+
 *** How do Neural Networks learn?
+
+Not rule-based. Neural network deciphers answer by itself given the inputs and a structure
+
++ Single Layer Feedforward Neural Network (perceptron)
+  + Input: \(x\)
+  + Output:  \(\hat{y}\)
+  + Cost function: C = \(\frac {1}{2}(\hat{y}-y)^2\) (most common)
+    + What is the error that you have in your prediction
+    + Goal is to minimize the cost function
+  + Information is fed back through the network and weights are updated
+  + Process is repeated with same observation until it converges
+  + One epoch is when we go through a whole dataset and train our neural net on all observations
+  + Cost function for multiple rows is \(C=\sum\frac{1}{2}(\hat{y} - y) ^ 2\). All rows share the same weights
+  + Process of feedback is called backpropagation
 
 *** Gradient Descent
 
++ How do we reduce the cost function?
++ The brute force method is to try out infinitely many weights to see which one is best. This is extremely inefficient due to the curse of dimensionality
++ Gradient Descent starts somewhere and look at the slope is positive or negative (down or uphill)
++ Then a "step" is taken and slope is recalculated to find out the next step using the new weight as the starting position
+
 *** Stochastic Gradient Descent
 
++ Gradient Descent is a way to help solve optimization problem of minimizing cost function
++ However, Gradient Descent requires that the cost function is convex (parabola)
++ If the cost function is not convex, Gradient Descent finds local minimum instead of global
++ Stochastic Gradient Descent does not require a convex cost function
++ With Stochastic Gradient Descent, the weights are updated on an observation basis as opposed to the aggregate after processing all observations
++ Stochastic Gradient Descent allows you to avoid getting stuck at local minima
++ Stochastic Gradient Descent has greater fluctuations
++ Stochastic Gradient Descent is faster because all weights are not updated at the same time and data is not in memory
++ Gradient Descent is deterministic algorithm and Stochastic Gradient Descent is Stochastic
++ MiniBatch Gradient Descent method is a combination of both Gradient Desent and Stochastic Gradient Descent
 
 *** Backpropagatio
 
