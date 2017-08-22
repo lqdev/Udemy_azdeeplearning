@@ -1,0 +1,210 @@
+% Created 2017-08-22 Tue 19:30
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\date{\today}
+\title{Deep Learning A-Z: Hands-On AI}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={Deep Learning A-Z: Hands-On AI},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.3.1 (Org mode 9.0.9)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\subsection{Section 1: Welcome to the Course}
+\label{sec:orgfed15d4}
+
+8/21/2017
+
+\subsubsection{What is Deep Learning}
+\label{sec:orga3175be}
+
+\begin{itemize}
+\item Geoffrey Hinton - Godfather of DL. Check out youtube videos.
+\item Artificial Neural Nets
+\begin{itemize}
+\item Made up of nodes
+\begin{itemize}
+\item Input Nodes - Input Layer (known values)
+\item Output Nodes - Output Layer (values to predict)
+\item Hidden Layer - Between input and output layer.
+\end{itemize}
+\item Input -> Hidden -> Output
+\item Deep Learning comes in when there are multiple hidden layers.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Installing Python}
+\label{sec:org392d370}
+
+\begin{itemize}
+\item Install Anaconda Python (version 3.5)
+\item Launch Spyder through Anaconda Navigator
+\end{itemize}
+
+\subsubsection{Getting The Dataset}
+\label{sec:org2f66f8b}
+
+\url{http://superdatascience.com/deep-learning}
+
+\begin{itemize}
+\item Download Deep Learning A-Z Folder Template
+\item Download the dataset for each part of the course
+\item Look into Additional Reading mentioned throughout course
+\end{itemize}
+
+\subsection{Section 2: Artificial Neural Networks}
+\label{sec:orgb8c7546}
+
+\section{Part 1}
+\label{sec:org360414c}
+
+\subsection{Section 3: ANN Intuition}
+\label{sec:orgaba52d8}
+
+\subsubsection{Plan of Attack}
+\label{sec:orgbcb8c66}
+\begin{itemize}
+\item What we will learn in this section:
+\begin{itemize}
+\item The Neuron
+\item The Activation Function
+\item How do neural networks work? (example)
+\item How do neural networks learn?
+\item Gradient Descent
+\item Stochastic Gradient Descent
+\item Backprogation
+\end{itemize}
+\end{itemize}
+
+\subsubsection{The Neuron}
+\label{sec:org67b617d}
+
+\begin{itemize}
+\item Basic building block of Artificial Neural Networks
+\item Neurons by themselves are useless. With lots of neurons, they work together.
+\item Dendrites are receivers of the signal and Axon is transmitter.
+\item Synapses - Term for connector that passes signal.
+
+\item Recreating on machine
+\begin{itemize}
+\item Neuron (node)
+\begin{itemize}
+\item Receives input (from input layer or other hidden layer neurons)
+\item Generates output (to output layer or other hidden layer neurons)
+\item Connected via synapses
+\end{itemize}
+\item Input Values
+\begin{itemize}
+\item Independent variables
+\item All for one single observation (one row in your database)
+\item Need to be standadized (mean 0; variance: 1) or normalized (get values between 0 and 1)
+\begin{itemize}
+\item Easier for neural network to process
+\end{itemize}
+\end{itemize}
+\item Output Values
+\begin{itemize}
+\item Continous, Binary, Categorical (several output values)
+\item All for one single observation
+\end{itemize}
+\item Synapses
+\begin{itemize}
+\item All assigned weights.
+\item Weights is how the neural net works learn. By adjusting weights, neural net decides which signal gets passed along or not
+\item Signals are sent into the neuron where they are added (weighted sum) of all input values and applies an activation function
+\item Decision is made based on function whether signal will pass on or not
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsubsection{The Activation Function}
+\label{sec:org2bb2fcd}
+
+\begin{itemize}
+\item Threshold Function
+\begin{itemize}
+\item 1 if x >= 0 | 0 if x < 0 (yes or no)
+\end{itemize}
+\item Sigmoid Function
+\begin{itemize}
+\item \(\frac{1}{1 + e^{-x}}\) (used in logistic regression)
+\item Smooth gradual progression
+\item Very useful in output layer
+\end{itemize}
+\item Rectifier Function
+\begin{itemize}
+\item \(max(x,0)\)
+\item One of most used
+\end{itemize}
+\item Hyperbolic Tangent (tahn)
+\begin{itemize}
+\item \(\frac{1 - e^{-2x}}{ 1 + e^{-2x}}\)
+\item Can go below 0
+\end{itemize}
+
+\item Exercise 1
+\begin{itemize}
+\item Assuming DV is binary (y = 0 or 1)
+\begin{itemize}
+\item Threshold Function
+\item Sigmoid Function (probability of y being 1 or not)
+\end{itemize}
+\end{itemize}
+\item Exercise 2
+\begin{itemize}
+\item In hidden layer apply rectifier
+\item Output layer applies sigmoid function
+\end{itemize}
+\end{itemize}
+
+\subsubsection{How do Neural Networks work?}
+\label{sec:org0008b30}
+
+\subsubsection{How do Neural Networks learn?}
+\label{sec:org16c0e85}
+
+\subsubsection{Gradient Descent}
+\label{sec:orgd99563a}
+
+\subsubsection{Stochastic Gradient Descent}
+\label{sec:org20a6cc1}
+
+
+\subsubsection{Backpropagatio}
+\label{sec:orgf86a913}
+
+
+\subsection{Section 4: Building an ANN}
+\label{sec:org9fcaab0}
+
+\subsection{Section 5: Homework Challenge - Should we say goodbye to that customer?}
+\label{sec:org8fed90b}
+
+\subsection{Section 6: Evaluation, Improving and Tuning the ANN}
+\label{sec:orge5b54ba}
+
+\subsection{Section 7: Homework Challenge - Put me one step down on the podium}
+\label{sec:org53aad63}
+
+\subsection{Section 8: Convolutional Neural Networks}
+\label{sec:orge98fbeb}
+\end{document}
