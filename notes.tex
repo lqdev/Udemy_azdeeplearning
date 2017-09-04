@@ -1,4 +1,4 @@
-% Created 2017-08-22 Tue 19:30
+% Created 2017-09-03 Sun 20:09
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -14,14 +14,15 @@
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
+\author{Luis Quintanilla}
 \date{\today}
 \title{Deep Learning A-Z: Hands-On AI}
 \hypersetup{
- pdfauthor={},
+ pdfauthor={Luis Quintanilla},
  pdftitle={Deep Learning A-Z: Hands-On AI},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 24.3.1 (Org mode 9.0.9)}, 
+ pdfcreator={Emacs 24.5.1 (Org mode 9.0.9)}, 
  pdflang={English}}
 \begin{document}
 
@@ -30,12 +31,12 @@
 
 
 \subsection{Section 1: Welcome to the Course}
-\label{sec:orgfed15d4}
+\label{sec:org7693b2d}
 
 8/21/2017
 
 \subsubsection{What is Deep Learning}
-\label{sec:orga3175be}
+\label{sec:orgf24582f}
 
 \begin{itemize}
 \item Geoffrey Hinton - Godfather of DL. Check out youtube videos.
@@ -53,7 +54,7 @@
 \end{itemize}
 
 \subsubsection{Installing Python}
-\label{sec:org392d370}
+\label{sec:orgbd8c72f}
 
 \begin{itemize}
 \item Install Anaconda Python (version 3.5)
@@ -61,7 +62,7 @@
 \end{itemize}
 
 \subsubsection{Getting The Dataset}
-\label{sec:org2f66f8b}
+\label{sec:org6abb65b}
 
 \url{http://superdatascience.com/deep-learning}
 
@@ -72,16 +73,16 @@
 \end{itemize}
 
 \subsection{Section 2: Artificial Neural Networks}
-\label{sec:orgb8c7546}
+\label{sec:org6fd0ef0}
 
 \section{Part 1}
-\label{sec:org360414c}
+\label{sec:org3e2cd51}
 
 \subsection{Section 3: ANN Intuition}
-\label{sec:orgaba52d8}
+\label{sec:org4e7f6bf}
 
 \subsubsection{Plan of Attack}
-\label{sec:orgbcb8c66}
+\label{sec:orgf3b5624}
 \begin{itemize}
 \item What we will learn in this section:
 \begin{itemize}
@@ -96,7 +97,7 @@
 \end{itemize}
 
 \subsubsection{The Neuron}
-\label{sec:org67b617d}
+\label{sec:orgec9f4a2}
 
 \begin{itemize}
 \item Basic building block of Artificial Neural Networks
@@ -137,7 +138,7 @@
 \end{itemize}
 
 \subsubsection{The Activation Function}
-\label{sec:org2bb2fcd}
+\label{sec:orge54470d}
 
 \begin{itemize}
 \item Threshold Function
@@ -176,35 +177,99 @@
 \end{itemize}
 \end{itemize}
 
+
+8/22/2017
+
 \subsubsection{How do Neural Networks work?}
-\label{sec:org0008b30}
+\label{sec:orgcaafff8}
+
+Example: Property Valuations
+
+\begin{itemize}
+\item Input Layer
+\begin{itemize}
+\item Area
+\item Bedrooms
+\item Distance to city
+\item Age
+\end{itemize}
+\item Output Layer
+\begin{itemize}
+\item Price
+\end{itemize}
+\item Hidden Layer
+\begin{itemize}
+\item Connected with input layer
+\item Some weights will have 0 value and others will not
+\item Allows you to increase the flexibility or your neural network and look for specific things
+\end{itemize}
+\end{itemize}
 
 \subsubsection{How do Neural Networks learn?}
-\label{sec:org16c0e85}
+\label{sec:orga12f016}
+
+Not rule-based. Neural network deciphers answer by itself given the inputs and a structure
+
+\begin{itemize}
+\item Single Layer Feedforward Neural Network (perceptron)
+\begin{itemize}
+\item Input: \(x\)
+\item Output:  \(\hat{y}\)
+\item Cost function: C = \(\frac {1}{2}(\hat{y}-y)^2\) (most common)
+\begin{itemize}
+\item What is the error that you have in your prediction
+\item Goal is to minimize the cost function
+\end{itemize}
+\item Information is fed back through the network and weights are updated
+\item Process is repeated with same observation until it converges
+\item One epoch is when we go through a whole dataset and train our neural net on all observations
+\item Cost function for multiple rows is \(C=\sum\frac{1}{2}(\hat{y} - y) ^ 2\). All rows share the same weights
+\item Process of feedback is called backpropagation
+\end{itemize}
+\end{itemize}
 
 \subsubsection{Gradient Descent}
-\label{sec:orgd99563a}
+\label{sec:org03c600c}
+
+\begin{itemize}
+\item How do we reduce the cost function?
+\item The brute force method is to try out infinitely many weights to see which one is best. This is extremely inefficient due to the curse of dimensionality
+\item Gradient Descent starts somewhere and look at the slope is positive or negative (down or uphill)
+\item Then a "step" is taken and slope is recalculated to find out the next step using the new weight as the starting position
+\end{itemize}
 
 \subsubsection{Stochastic Gradient Descent}
-\label{sec:org20a6cc1}
+\label{sec:org7b237e5}
 
+\begin{itemize}
+\item Gradient Descent is a way to help solve optimization problem of minimizing cost function
+\item However, Gradient Descent requires that the cost function is convex (parabola)
+\item If the cost function is not convex, Gradient Descent finds local minimum instead of global
+\item Stochastic Gradient Descent does not require a convex cost function
+\item With Stochastic Gradient Descent, the weights are updated on an observation basis as opposed to the aggregate after processing all observations
+\item Stochastic Gradient Descent allows you to avoid getting stuck at local minima
+\item Stochastic Gradient Descent has greater fluctuations
+\item Stochastic Gradient Descent is faster because all weights are not updated at the same time and data is not in memory
+\item Gradient Descent is deterministic algorithm and Stochastic Gradient Descent is Stochastic
+\item MiniBatch Gradient Descent method is a combination of both Gradient Desent and Stochastic Gradient Descent
+\end{itemize}
 
-\subsubsection{Backpropagatio}
-\label{sec:orgf86a913}
+\subsubsection{Backpropagation}
+\label{sec:org5fbdb08}
 
 
 \subsection{Section 4: Building an ANN}
-\label{sec:org9fcaab0}
+\label{sec:org8590947}
 
 \subsection{Section 5: Homework Challenge - Should we say goodbye to that customer?}
-\label{sec:org8fed90b}
+\label{sec:orgd4ac517}
 
 \subsection{Section 6: Evaluation, Improving and Tuning the ANN}
-\label{sec:orge5b54ba}
+\label{sec:orgc25a953}
 
 \subsection{Section 7: Homework Challenge - Put me one step down on the podium}
-\label{sec:org53aad63}
+\label{sec:org0f4123f}
 
 \subsection{Section 8: Convolutional Neural Networks}
-\label{sec:orge98fbeb}
+\label{sec:org2a47bda}
 \end{document}

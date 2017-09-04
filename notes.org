@@ -148,7 +148,7 @@ Not rule-based. Neural network deciphers answer by itself given the inputs and a
 + Gradient Descent is deterministic algorithm and Stochastic Gradient Descent is Stochastic
 + MiniBatch Gradient Descent method is a combination of both Gradient Desent and Stochastic Gradient Descent
 
-*** Backpropagatio
+*** Backpropagation
 
 
 ** Section 4: Building an ANN
